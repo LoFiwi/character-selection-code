@@ -1,0 +1,74 @@
+#include <iostream>
+
+
+enum Monsters
+{
+	MONSTERS_OGRE,
+	MONSTERS_GOBLIN,
+	MONSTERS_SKELETON,
+	MONSTERS_ORC,
+	MONSTERS_TROLL,
+};
+
+struct MonstersInfo {
+	Monsters type;
+	double health;
+};
+
+void printout(MonstersInfo monster, std::string name) {
+	if (monster.type == Monsters::MONSTERS_OGRE)
+		std::cout << "You choose an Ogre named " << name << " and he has " << monster.health << " health." << std::endl;
+	else if (monster.type == Monsters::MONSTERS_GOBLIN)
+		std::cout << "You choose an Goblin named " << name << " and he has " << monster.health << " healt." << std::endl;
+	else if (monster.type == Monsters::MONSTERS_SKELETON)
+		std::cout << "You choose an Skeleton named " << name << " and he has " << monster.health << " health." << std::endl;
+	else if (monster.type == Monsters::MONSTERS_ORC)
+		std::cout << "You choose an Orc named " << name << " and he has " << monster.health << " health." << std::endl;
+	else if (monster.type == Monsters::MONSTERS_TROLL)
+		std::cout << "You choose an Troll named " << name << " and he has " << monster.health << " health." << std::endl;
+}
+
+int main() {
+
+	int monsterChoose;
+	std::string nameChoose;
+
+	std::cout << "Choose one monster, enter his number" << std::endl;
+	std::cout << "------------------------------------------" << std::endl;
+	std::cout << "1. Ogre\n";
+	std::cout << "2. Goblin\n";
+	std::cout << "3. Skeleton\n";
+	std::cout << "4. Orc\n";
+	std::cout << "5. Troll\n";
+	std::cout << "------------------------------------------" << std::endl;
+	std::cout << "You pick: ";
+	std::cin >> monsterChoose;
+	std::cout << "Now enter the name of your monster: ";
+	std::cin >> nameChoose;
+
+
+	if (monsterChoose == 1) {
+		MonstersInfo Ogre = { Monsters::MONSTERS_OGRE, 100 };
+		printout(Ogre, nameChoose);
+	}
+	else if (monsterChoose == 2) {
+		MonstersInfo Goblin = { Monsters::MONSTERS_GOBLIN, 100 };
+		printout(Goblin, nameChoose);
+	}
+	else if (monsterChoose == 3) {
+		MonstersInfo Skeleton = { Monsters::MONSTERS_SKELETON, 100 };
+		printout(Skeleton, nameChoose);
+	}
+	else if (monsterChoose == 4) {
+		MonstersInfo Orc = { Monsters::MONSTERS_ORC, 100 };
+		printout(Orc, nameChoose);
+	}
+	else if (monsterChoose == 5) {
+		MonstersInfo Troll = { Monsters::MONSTERS_TROLL, 100 };
+		printout(Troll, nameChoose);
+	}
+	
+
+	
+
+}
